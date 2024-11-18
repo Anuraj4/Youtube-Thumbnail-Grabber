@@ -1,6 +1,211 @@
-body{
-  background-color: rgb(78, 76, 76);
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+  color: #fff;
+  overflow-x: hidden;
 }
-.container{
-  background-color: rgb(113, 192, 184);
+
+.card {
+  margin: 20px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  flex: 1;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15); /* Transparent background */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+  color: #ffffff;
+}
+
+.url-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.url-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 1px solid #fff;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.preview-container img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.watermark {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0px;
+}
+
+.button:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #2575fc;
+}
+
+.resolution-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.resolution-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.resolution-dropdown.visible {
+  display: block;
+}
+
+.resolution-dropdown button {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.resolution-dropdown button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.invalid-link-message {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.preview-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+/* Ensure the body padding is reduced and font size is smaller for small screens */
+@media (max-width: 400px) {
+  body {
+    font-size: 14px; /* Reduce font size for better readability */
+    padding: 10px; /* Adjust padding to fit the screen */
+  }
+
+  /* Make the container width smaller and adjust its padding */
+  .container {
+    width: 100%; /* Use full width of the screen */
+    padding: 15px; /* Reduce padding for small screens */
+    border-radius: 8px; /* Slightly smaller border radius */
+  }
+
+  /* Input fields take full width */
+  .url-input {
+    width: 100%; /* Full width */
+    font-size: 14px; /* Adjust font size */
+  }
+
+  /* Buttons are stacked with reduced padding and font size */
+  .button {
+    width: 100%; /* Full width for buttons */
+    font-size: 14px; /* Smaller text size */
+    padding: 10px; /* Reduce padding */
+  }
+
+  /* Preview container scales down for smaller screens */
+  .preview-container {
+    height: 200px; /* Reduce height */
+    border-width: 1px; /* Thinner border */
+    margin: 10px 0; /* Adjust margins */
+  }
 }
